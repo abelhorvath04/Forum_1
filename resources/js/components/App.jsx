@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Signup from './Signup'
 import Main from './Main'
 import Footer from './Footer'
+import EmailVerify from './EmailVerify'
+import Profile from './Profile'
 
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
                 <Route index element={<Main />} />
                 <Route path="/login" element={<Main />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/email/verify" element={<EmailVerify />} />
+                <Route path="/profile" element={<Profile />} />
             </Routes>
         </BrowserRouter>
         <Footer/>

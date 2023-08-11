@@ -2,18 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use App\Notifications\EmailVerify;
+use App\Http\Requests\RegisterRequest;
+use Illuminate\Auth\Events\Registered;
 
 class UserController extends Controller
 {
     function register(RegisterRequest $request)
     {
-        print_r("reg");
         $validated = $request->validated();
 
-        User::create($validated);
+        $user = User::create($validated);
 
-        return response()->json(['message' => 'Data submitted successfully'], 200);
+        event(new Registered($user));
+
+        auth()->login($user);
+
+        return redirect('/profile')->with('success', "Account successfully registered and verified.");
     }
 }

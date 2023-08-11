@@ -21,26 +21,20 @@ function Signup() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        console.log("anyád");
 
         const form = e.currentTarget;
 
         if (form.checkValidity() === false || formData.password !== passwordConfirmation) {
             e.preventDefault();
-            console.log("falseeeeeee");
             e.stopPropagation();
 
         } else {
 
             setValidated(true);
-            console.log("truuuuuu");
 
             try {
                 const response = await axios.get('/csrf-token');
                 const csrfToken = response.data.token;
-
-                console.log("1");
                 axios.post('/api/register', formData, {
                     headers: {
                         'X-CSRF-TOKEN': csrfToken,
@@ -48,6 +42,7 @@ function Signup() {
                 })
                     .then(response => {
                         console.log(response.data.message);
+                        window.location.replace('/email/verify');
                     })
                     .catch(error => {
                         console.error('Error submitting data:', error);
@@ -81,8 +76,13 @@ function Signup() {
                             <div className="container">
                                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                                     <Row className="mb-3">
-                                        <Form.Group as={Col} md="12" controlId="validation_name">
-                                            <Form.Label>Name</Form.Label>
+                                        <Form.Group
+                                            as={Col}
+                                            md="12"
+                                            controlId="validation_name"
+                                            className="form-text-left"
+                                        >
+                                            <Form.Label >Username</Form.Label>
                                             <InputGroup hasValidation>
                                                 <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
                                                 <Form.Control
@@ -100,7 +100,12 @@ function Signup() {
                                         </Form.Group>
                                     </Row>
                                     <Row className='mb-3'>
-                                        <Form.Group as={Col} md="12" controlId="valdation_mail">
+                                        <Form.Group
+                                            as={Col}
+                                            md="12"
+                                            controlId="valdation_mail"
+                                            className="form-text-left"
+                                        >
                                             <Form.Label>E-mail address</Form.Label>
                                             <InputGroup hasValidation>
                                                 <Form.Control
@@ -118,7 +123,12 @@ function Signup() {
                                         </Form.Group>
                                     </Row>
                                     <Row className="mb-3">
-                                        <Form.Group as={Col} md="12" controlId="validation_password">
+                                        <Form.Group
+                                            as={Col}
+                                            md="12"
+                                            controlId="validation_password"
+                                            className="form-text-left"
+                                        >
                                             <Form.Label>Password</Form.Label>
                                             <Form.Control
                                                 type="password"
@@ -133,11 +143,16 @@ function Signup() {
                                         </Form.Group>
                                     </Row>
                                     <Row className="mb-3">
-                                        <Form.Group as={Col} md="12" controlId="validation_password_conf">
-                                            <Form.Label>Password confirmation</Form.Label>
+                                        <Form.Group
+                                            as={Col}
+                                            md="12"
+                                            controlId="validation_password_conf"
+                                            className="form-text-left"
+                                        >
+                                            <Form.Label>Password again</Form.Label>
                                             <Form.Control
                                                 type="password"
-                                                placeholder="Password confirmation"
+                                                placeholder="Password"
                                                 name="password_confirmation"
                                                 value={passwordConfirmation}
                                                 onChange={handleChange}
