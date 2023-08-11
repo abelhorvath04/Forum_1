@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     function register(RegisterRequest $request)
     {
-
+        print_r("reg");
         $validated = $request->validated();
 
         User::create($validated);

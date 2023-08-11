@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,4 @@ Route::get('/csrf-token', function() {
     return response()->json(['token' => csrf_token()]);
 });
 
-Route::post('/register', 'UserController@register');
+Route::post('/register', [UserController::class, 'register']);

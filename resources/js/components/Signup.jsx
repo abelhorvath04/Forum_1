@@ -21,21 +21,26 @@ function Signup() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
+        console.log("anyád");
 
         const form = e.currentTarget;
 
         if (form.checkValidity() === false || formData.password !== passwordConfirmation) {
             e.preventDefault();
+            console.log("falseeeeeee");
             e.stopPropagation();
 
         } else {
 
             setValidated(true);
+            console.log("truuuuuu");
 
             try {
                 const response = await axios.get('/csrf-token');
                 const csrfToken = response.data.token;
 
+                console.log("1");
                 axios.post('/api/register', formData, {
                     headers: {
                         'X-CSRF-TOKEN': csrfToken,
