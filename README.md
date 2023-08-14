@@ -1,1 +1,1 @@
-React and Laravel application.
+React and Laravel application is being built.
