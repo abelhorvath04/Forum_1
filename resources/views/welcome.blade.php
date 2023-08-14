@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('./favico.png') }}" />
-    <title>Forum</title>
+    <title>Safe Place</title>
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
