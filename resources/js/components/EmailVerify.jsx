@@ -23,7 +23,7 @@ export default function EmailVerify() {
     <div>
       <h2>Email Verification</h2>
       <p>Thanks for registering! Before getting started, we need to verify your email address.</p>
-      <p>If you did not create an account, no further action is required.</p>
+      <p>If you did not create an account, no further action is required!</p>
       <Button onClick={handleResendClick}>Resend Verification Link</Button>
     </div>
   );
