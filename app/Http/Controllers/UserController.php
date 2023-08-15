@@ -3,22 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Notifications\EmailVerify;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\RegisterRequest;
-use Illuminate\Auth\Events\Registered;
 
 class UserController extends Controller
 {
+
     function register(RegisterRequest $request)
     {
+
         $validated = $request->validated();
 
-        $user = User::create($validated);
+        User::create($validated);
 
-        event(new Registered($user));
+        return redirect()->back()->with('success', 'Sikeres regisztráció!');
+    }
 
-        auth()->login($user);
+    function login(Request $request)
+    {
+        $proba = Auth::attempt(['email' => $request->email, 'password' => $request->password, $request->remember]);
 
-        return redirect('/profile')->with('success', "Account successfully registered and verified.");
+        if (!$proba) {
+            return redirect()->back()->with('error', 'Sikertelen belépés');
+        } else {
+            return redirect()->to('/profile')->with('success', 'Sikeres belépés!');
+        }
     }
 }

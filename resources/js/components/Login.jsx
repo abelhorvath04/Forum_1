@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../css/app.css'
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button'
 
 function Login() {
 
@@ -29,23 +30,26 @@ function Login() {
                                     className='form-control rounded'
                                 />
                                 <br />
-                                <Link to="/login">
-                                    <input
+                                <Link to="/profile">
+                                    <Button
                                         type="button"
-                                        value="Log in"
-                                        className="btn btn-primary btn-lg btn_login fw-bold"
-                                    />
+                                        className='btn-lg'
+                                    >
+                                        <b>Log in</b>
+                                    </Button>
                                 </Link>
                             </div>
                             <br />
                             <hr />
                             <br />
                             <Link to="/signup">
-                                <input
+                                <Button
                                     type="button"
-                                    value="Sign up"
-                                    className="btn btn-success btn-lg fw-bold"
-                                />
+                                    className='btn-lg btn-success'
+                                >
+                                    <b>Sign up</b>
+                                </Button>
+
                             </Link>
                         </div>
                     </div>

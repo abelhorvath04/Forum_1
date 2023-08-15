@@ -12,7 +12,12 @@
 <body>
 
     <div id="app"></div>
-    
+
+<script>
+    window.successMessage = @json(session('success'));
+    window.errorMessage = @json(session('error'));
+</script>
+
 <script src="/js/app.js"></script>
 </body>
 </html>
