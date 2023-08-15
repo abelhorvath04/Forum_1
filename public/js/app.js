@@ -9843,7 +9843,7 @@ function Signup() {
                         required: true
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Control.Feedback, {
                         type: "invalid",
-                        children: "Please choose a username."
+                        children: "Please choose a username!"
                       })]
                     })]
                   })
@@ -9867,7 +9867,7 @@ function Signup() {
                         required: true
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Control.Feedback, {
                         type: "invalid",
-                        children: "Please write your valid e-mail."
+                        children: "Please write your valid e-mail!"
                       })]
                     })]
                   })
@@ -9889,7 +9889,7 @@ function Signup() {
                       required: true
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Control.Feedback, {
                       type: "invalid",
-                      children: "Please write a stronger password."
+                      children: "Please write a stronger password!"
                     })]
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -9910,7 +9910,7 @@ function Signup() {
                       required: true
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_4__["default"].Control.Feedback, {
                       type: "invalid",
-                      children: "Please write an identical password."
+                      children: "Please write an identical password!"
                     })]
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {

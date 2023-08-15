@@ -94,7 +94,7 @@ function Signup() {
                                                     required
                                                 />
                                                 <Form.Control.Feedback type="invalid">
-                                                    Please choose a username.
+                                                    Please choose a username!
                                                 </Form.Control.Feedback>
                                             </InputGroup>
                                         </Form.Group>
@@ -117,7 +117,7 @@ function Signup() {
                                                     required
                                                 />
                                                 <Form.Control.Feedback type="invalid">
-                                                    Please write your valid e-mail.
+                                                    Please write your valid e-mail!
                                                 </Form.Control.Feedback>
                                             </InputGroup>
                                         </Form.Group>
@@ -138,7 +138,7 @@ function Signup() {
                                                 onChange={handleChange}
                                                 required />
                                             <Form.Control.Feedback type="invalid">
-                                                Please write a stronger password.
+                                                Please write a stronger password!
                                             </Form.Control.Feedback>
                                         </Form.Group>
                                     </Row>
@@ -158,7 +158,7 @@ function Signup() {
                                                 onChange={handleChange}
                                                 required />
                                             <Form.Control.Feedback type="invalid">
-                                                Please write an identical password.
+                                                Please write an identical password!
                                             </Form.Control.Feedback>
                                         </Form.Group>
                                     </Row>
